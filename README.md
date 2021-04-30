@@ -1,16 +1,16 @@
-# SQL Column Data Types
+# SQLite Data Types
 
-## Overview
+## Learning Goals
+
+- Describe data typing and how it allows for operations to be performed with
+   predictable results.
+- List four different types of data you can store in a SQLite database.
+- Define three specific SQLite database types: Text, Integer, and Real.
+
+## Introduction
 
 In this lesson, we'll cover the importance of specifying datatypes, and the
 different types of data you can store in a SQLite database.
-
-## Objectives
-
-1. Describe data typing and how it allows for operations to be performed with
-   predictable results.
-2. List four different types of data you can store in a SQLite database.
-3. Define three specific SQLite database types: Text, Integer, and Real.
 
 ## Why Do Data Types Matter?
 
