@@ -61,8 +61,8 @@ with storing, accessing, and acting upon that data as efficiently and normally
 as possible.
 
 Typing gives us the ability to perform all kinds of operations with predictable
-results. For instance, the ability to perform Math operations like `SUM` &mdash;
-i.e. summing integers &mdash; doesn't just depend on everything being an integer
+results. For instance, the ability to perform Math operations like `SUM` —
+i.e. summing integers — doesn't just depend on everything being an integer
 of some sort but would also expect it. If you tried, for example,  to `SUM` all
 of the cats in the above table, SQLite would actually attempt to convert, or
 cast, their type to something it can `SUM`. It would try to convert anything it
