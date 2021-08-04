@@ -25,29 +25,11 @@ informs our database of the kind of data we plan to store in a column but it
 also restricts it. For instance, look at the age column below in our cats table.
 What do we mean by age? What if we had this:
 
-<table border="1" cellpadding="4" cellspacing="0">
-  <tr>
-    <th>name</th>
-    <th>breed</th>
-    <th>age</th>
-  </tr>
-  
-  <tr>
-    <td>Maru</td>
-    <td>Scottish Fold</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>Hannah</td>
-    <td>Tabby</td>
-    <td>two</td>
-  </tr>
-  <tr>
-    <td>Lil' Bub</td>
-    <td>American Shorthair</td>
-    <td>5.5</td>
-  </tr>
-</table>
+| name | breed | age |
+| --- | --- | --- |
+| Maru | Scottish Fold | 3 |
+| Hannah | Tabby | two |
+| Lil' Bub | American Shorthair | 5.5 |
 
 Did we intend age to be represented as a whole number, a word, or a decimal? If
 we asked you to add up the ages of all the cats you could simply convert the
