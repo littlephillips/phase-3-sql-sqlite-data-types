@@ -3,9 +3,9 @@
 ## Learning Goals
 
 - Describe data typing and how it allows for operations to be performed with
-   predictable results.
-- List four different types of data you can store in a SQLite database.
-- Define three specific SQLite database types: Text, Integer, and Real.
+  predictable results
+- List five different types of data you can store in a SQLite database
+- Define three specific SQLite database types: Text, Integer, and Real
 
 ## Introduction
 
@@ -16,25 +16,26 @@ different types of data you can store in a SQLite database.
 
 We've learned that when we create a table, we need to include a name for it as
 well as define at least one column. We define columns in a `CREATE` statement by
-including a name and a datatype to let SQLite know the kind of data we will be
-storing there. The practice of explicitly declaring a type is known as "typing."
+including a name and a **datatype** to let SQLite know the _kind_ of data we will
+be storing there. The practice of explicitly declaring a type is known as
+"typing."
 
 Why is it important that we use typing in our database? Simply put, typing
 allows us to exercise some level of control over our data. Typing not only
-informs our database of the kind of data we plan to store in a column but it
-also restricts it. For instance, look at the age column below in our cats table.
-What do we mean by age? What if we had this:
+informs our database of the kind of data we plan to store in a column, but it
+also restricts it. For instance, look at the `age` column below in our `cats`
+table. What do we mean by age? What if we had this:
 
-| name | breed | age |
-| --- | --- | --- |
-| Maru | Scottish Fold | 3 |
-| Hannah | Tabby | two |
+| name     | breed              | age |
+| -------- | ------------------ | --- |
+| Maru     | Scottish Fold      | 3   |
+| Hannah   | Tabby              | two |
 | Lil' Bub | American Shorthair | 5.5 |
 
-Did we intend age to be represented as a whole number, a word, or a decimal? If
-we asked you to add up the ages of all the cats you could simply convert the
+Did we intend `age` to be represented as a whole number, a word, or a decimal?
+If we asked you to add up the ages of all the cats you could simply convert the
 'two' to 2 in your head, but your database can't do that. It doesn't have that
-ability because the logic involved in converting a word into a number would be
+ability, because the logic involved in converting a word into a number would be
 dense and inefficient. What about different languages? What about different
 spellings? Capitalization, typos, or different hyphenation conventions? These
 are just some reasons this might start to get crazy. In other words, because
@@ -43,12 +44,12 @@ with storing, accessing, and acting upon that data as efficiently and normally
 as possible.
 
 Typing gives us the ability to perform all kinds of operations with predictable
-results. For instance, the ability to perform Math operations like `SUM` —
-i.e. summing integers — doesn't just depend on everything being an integer
-of some sort but would also expect it. If you tried, for example,  to `SUM` all
-of the cats in the above table, SQLite would actually attempt to convert, or
-cast, their type to something it can `SUM`. It would try to convert anything it
-can to an `INTEGER` and ignore alpha characters. This can lead to real problems.
+results. For instance, the ability to perform math operations like `SUM` — i.e.
+summing integers — doesn't just depend on everything being an integer of some
+sort but would also expect it. If you tried, for example, to `SUM` all of the
+cats in the above table, SQLite would actually attempt to convert, or cast,
+their type to something it can `SUM`. It would try to convert anything it can to
+an `INTEGER` and ignore alpha characters. This can lead to real problems.
 Without typing, our data might get complicated and messy, and it would be
 difficult to ask the database questions about large sets of data.
 
@@ -59,17 +60,21 @@ we have given to a particular column.
 
 Different database systems also have different datatypes available, which are
 important and useful to know whenever you are dealing with those systems. SQLite
-is a good starting point to learn about datatypes because it only has four basic
+is a good starting point to learn about datatypes because it only has five basic
 categories of datatypes; they are:
 
-```bash
-TEXT
-INTEGER
-REAL
-BLOB
-```
+- `NULL`
+- `TEXT`
+- `INTEGER`
+- `REAL`
+- `BLOB`
 
 Let's explore each category in more detail.
+
+### NULL
+
+In a database, `NULL` represents "no value", like `null` in JavaScript or `nil`
+in Ruby.
 
 ### TEXT
 
@@ -109,14 +114,24 @@ holding binary data.
 
 To increase its compatibility with other database engines (e.g. mySQL or
 PostgreSQL), SQLite allows the programmer to use other common datatypes outside
-of the four mentioned above. This is why we are referring to `TEXT INTEGER REAL
-BLOB` as datatype "categories". All other common datatypes are lumped into one
-of the four existing datatypes recognized by SQLite. 
+of the four mentioned above. We can refer to `TEXT INTEGER REAL BLOB` as
+datatype "categories". All other common datatypes are lumped into one of the
+four existing datatypes recognized by SQLite.
 
 For example, `INT` is a common datatype used outside of SQLite. SQLite won't
 complain if you define a column as an `INT` datatype. It will simply lump it
 into the `INTEGER` category and store it as such.
 
+Boolean values are also stored as integers (0 for false, 1 for true).
+
 To accommodate this, SQLite has a pretty complicated system of categorizing
 datatypes that involves `Storage Classes`, `Type Affinities`, and `Datatypes`.
-For a deeper dive, check out the [SQLite3 Documentation on Datatypes](http://www.sqlite.org/datatype3.html)
+For a deeper dive, check out the
+[SQLite3 Documentation on Datatypes](http://www.sqlite.org/datatype3.html)
+
+## Conclusion
+
+Unlike dynamic languages like Ruby and JavaScript, SQL enforces strictness when
+it comes to datatypes. While it does restrict our ability to toss any old data
+we want into a particular column of a database, these restrictions work to our
+favor by enforcing consistency and predictability.
