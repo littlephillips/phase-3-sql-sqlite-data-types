@@ -1,0 +1,44 @@
+describe data typing and how it allows for operations to be perfomed with predictable results
+list five different typed of data ypu can store in a sqlite database
+define 3 specific sqlite database types: Text, Integer and Real
+
+we define columns in a CREATE statement include
+  : name and datatype
+to let sqlite know the kind of data we will be storing there.
+
+Sqlite datatypes: categories 
+        : NULL ...  no value
+        : TEXT  ... plain text
+        : INTEGER  .. whole number 
+        : REAL ... plain old decimal  && double precision
+        : BLOB  ... binary data
+
+  INT Converts to Integer
+  0 false && 1 true
+
+  system of categorizing datatypes
+     : Storage Classes
+     : Type Affinities 
+     : datatypes
+
+SELECT
+SQL CREATE TABLE
+SQL INSERT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
